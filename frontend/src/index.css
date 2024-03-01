@@ -1,0 +1,269 @@
+body {
+  background-color: #fefefe !important; /* Force white background */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  width: 100dvw; /* Take full width */
+  font-family: monospace;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ChatBox Component */
+.mega-container {
+  width: 100vw; /* Take full width of viewport */
+  height: 100vh; /* Take full height of viewport */
+  background-color: #ffffff; /* White background */
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:  20fr 80fr ;
+  place-items: center;
+}
+.qa_box {
+  grid-column: 1 / -1; /* Start at first column, end at last column */
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100%;
+  height: 90%;
+  gap: 5rem
+}
+
+.scroll-box {
+  overflow-y: auto; /* Activate vertical scrolling */
+  width: 95%;
+  font-size: 1.2rem;
+  position: relative;
+  max-height: 500px;
+  padding: 50px;
+  border: 1px solid #333;
+}
+
+.ai-response {
+  margin-left: 1.6rem;
+  margin-right: 1.6rem;
+  color: #333;
+  max-width: 100%;
+  max-height: 20%;
+}
+
+h1,
+.mega-container h2 {
+  text-align: center;
+  color: #6a1b9a; /* Purple text color */
+  font-size: 2rem;
+  
+}
+.mega-container > .qa_box > .scroll-box > form {
+  display:grid;
+  width: 100%;
+  position: relative;
+  color: #333;
+  grid-template-columns: 90fr 10fr;
+  place-items: center;
+}
+.form-username {
+  width: 100%;
+  height: 50%;
+  display: grid;
+  place-items: center;
+}
+.mega-container  input[type="text"],
+.form-username > input {
+  width: calc(100% - 70px);
+  padding: 25px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background-color: #fefefe !important; /* Force white background */
+  color: #333;
+}
+.mega-container  input[type="text"] {
+  height: 2rem;
+}
+
+.mega-container button,
+button[type="submit"] {
+  width: 100px; /* Fixed width */
+  padding: 12px;
+  height: 100%;
+  font-size: 1.2rem;
+  background-color: #6a1b9a; /* Purple button color */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.mega-container button:hover {
+  background-color: #4a148c; /* Darker purple on hover */
+}
+
+/* UploadPDF Component */
+.pdf_box {
+  grid-column: 2; /* Place in the second column */
+  grid-row: 1; /* Place at the top */
+  color: #333;
+  font-size: 1.4rem;
+  width: 50%;
+  padding: 50px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: 1rem;
+}
+
+
+.pdf_box h1 {
+  color: #6a1b9a; /* Purple text color */
+}
+
+.pdf_box label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.pdf_box input[type="file"] {
+  width: 100%;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.pdf_box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #6a1b9a; /* Purple button color */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.pdf_box button:hover {
+  background-color: #4a148c; /* Darker purple on hover */
+}
+.pdf-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  width: 60%;
+  flex-wrap: wrap;
+
+}
+
+.pdf-input-container > h1 {
+  flex: 0 0 100%;
+}
+.pdf_box input[type="file"] {
+  width: 100%;
+  /* Remove margin-bottom here */
+  text-align: center; /* Center the text */
+}
+
+.pdf-input {
+  margin: 0 auto;
+}
+
+.logo,.microphone,.summarize  {
+  width: 25px;
+}
+/* Add this to your CSS file or style block */
+
+
+.pdf_box h1 {
+  color: #6a1b9a; /* Purple text color */
+}
+
+.pdf_box label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.pdf_box input[type="file"] {
+  display: none; /* Hide the actual file input */
+}
+
+.pdf_box .file-upload-container {
+  display: inline-flex;
+  align-items: center;
+}
+
+.pdf_box .file-upload-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.pdf_box .file-upload-label svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px; /* Add space between logo and label text */
+}
+
+.pdf_box button {
+  width: 100%; /* Take full width */
+  padding: 12px;
+  background-color: #6a1b9a; /* Purple button color */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+  margin-top: 20px; /* Add margin between button and input */
+}
+
+.pdf_box button:hover {
+  background-color: #4a148c; /* Darker purple on hover */
+}
+.speaker {
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+}
+.speaker:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.mega-container > div > p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.microphone,.summarize  {
+  position: absolute;
+  stroke: #333;
+  left:85%;
+  top: 50%;
+  transform: translate(-85%,-50%);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.summarize {
+  left:80%;
+  top: 50%;
+  transform: translate(-80%,-50%);
+
+}
+
+.project-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  grid-column: 0; /* Place in the second column */
+  grid-row: 1; /* Place at the top */
+}
